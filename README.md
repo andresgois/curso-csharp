@@ -21,7 +21,14 @@
 
 ![Arquitetura](./imgs/arquitetura.png)
 
+> Identação: VS 2022: CTRL+K+D
+> Salvar: CTRL+F5
 
+
+### Conenções
+- `Camel Case`: lastName (parâmetros de métodos, variáveis dentro de métodos)
+- `Pascal Case`: LastName (namespaces, classe, properties e métodos)
+- `Padrão` _lastName (atributos "internos" da classe)
 
 ## Comandos Base
 ```
@@ -32,6 +39,8 @@ dotnet new webapi -o demoapi2 --framework net6.0
 dotnet run
 dotnet --list-sdks
 dotnet new console --framework net6.0
+dotnet new console -n ApplicationBase --framework net6.0
+dotnet new console -n ApplicationBase --project TesteAula2 --framework net6.0
 ```
 
 - [Baixar .NET 6.0](https://dotnet.microsoft.com/pt-br/download/dotnet/6.0)
