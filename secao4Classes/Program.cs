@@ -9,12 +9,14 @@ namespace secao4Classes // Note: actual namespace depends on the project name.
         {
             //MetodoTriangulo1();
             //MetodoTriangulo2();
-            CalculoProduto();
+            //CalculoProduto();
+            TesteClasseStatic();
         }
 
         static void MetodoTriangulo1()
         {
-            Triangulo x,  y;
+            Triangulo x,
+                y;
             x = new Triangulo();
             y = new Triangulo();
             Console.WriteLine("Entre com as medidas do triângulo X:");
@@ -43,7 +45,8 @@ namespace secao4Classes // Note: actual namespace depends on the project name.
 
         static void MetodoTriangulo2()
         {
-            Triangulo x,  y;
+            Triangulo x,
+                y;
             x = new Triangulo();
             y = new Triangulo();
             Console.WriteLine("Entre com as medidas do triângulo X:");
@@ -54,7 +57,7 @@ namespace secao4Classes // Note: actual namespace depends on the project name.
             y.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             y.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             y.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            
+
             double areaX = x.Area();
             double areaY = y.Area();
 
@@ -70,8 +73,8 @@ namespace secao4Classes // Note: actual namespace depends on the project name.
             }
         }
 
-
-        static void CalculoProduto(){
+        static void CalculoProduto()
+        {
             Produto p;
             Console.WriteLine("Entre com os dados do produto:");
             Console.Write("Nome: ");
@@ -95,7 +98,23 @@ namespace secao4Classes // Note: actual namespace depends on the project name.
 
             // Buscando pelo método ToString
             Console.WriteLine(p);
+        }
 
+        static void TesteClasseStatic()
+        {
+            // removido porque as propriedades e métodos da classe calculadora ficaram estáticos
+            // Calculadora calc = new Calculadora();
+            Console.Write("Entre o valor do raio: ");
+            double raio = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            double circ = Calculadora.Circunferencia(raio);
+            double volume = Calculadora.Volume(raio);
+            Console.WriteLine(
+                "Circunferência: " + circ.ToString("F2", CultureInfo.InvariantCulture)
+            );
+            Console.WriteLine("Volume: " + volume.ToString("F2", CultureInfo.InvariantCulture));
+            Console.WriteLine(
+                "Valor de PI: " + Calculadora.Pi.ToString("F2", CultureInfo.InvariantCulture)
+            );
         }
     }
 }
