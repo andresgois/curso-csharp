@@ -9,6 +9,16 @@ namespace MyApp // Note: actual namespace depends on the project name.
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            //TrabalhandoComNumeros();
+            //Formatando();
+            //Operadores();
+            //CastingDeDados();
+            //LeituraDeDados();
+            LacoDeRepeticao();
+        }
+
+        static void TrabalhandoComNumeros()
+        {
             bool completo = false;
             char genero = 'F';
             char letra = '\u0041';
@@ -33,7 +43,27 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Console.WriteLine(nome);
             Console.WriteLine(obj1);
             Console.WriteLine(obj2);
+        }
 
+        static void CastingDeDados()
+        {
+            Console.WriteLine(
+                "------------------Conversão implícita e casting----------------------"
+            );
+            double a1;
+            float b1;
+            a1 = 5.1;
+            b1 = (float)a1;
+            Console.WriteLine(b1);
+            double a2;
+            int b2;
+            a2 = 5.1;
+            b2 = (int)a2;
+            Console.WriteLine(b2);
+        }
+
+        static void Formatando()
+        {
             Console.WriteLine("----------------------------------------");
             double s = 24.36944;
             Console.WriteLine(s);
@@ -58,10 +88,14 @@ namespace MyApp // Note: actual namespace depends on the project name.
                     + saldo.ToString("F2", CultureInfo.InvariantCulture)
                     + " reais"
             );
+        }
+
+        static void Operadores()
+        {
             Console.WriteLine("------------------Operadores aritméticos----------------------");
-             n1 = 3 + 4 * 2;
-             n2 = (3 + 4) * 2;
-             n3 = 17 % 3;
+            int n1 = 3 + 4 * 2;
+            int n2 = (3 + 4) * 2;
+            int n3 = 17 % 3;
             double n14 = 10.0 / 8.0;
             double a = 1.0,
                 b = -3.0,
@@ -76,17 +110,53 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Console.WriteLine(delta);
             Console.WriteLine(x1);
             Console.WriteLine(x2);
-            Console.WriteLine("------------------Conversão implícita e casting----------------------");
-            double a1;
-            float b1;
-            a1 = 5.1;
-            b1 = (float)a1;
-            Console.WriteLine(b1);
-            double a2;
-            int b2;
-            a2 = 5.1;
-            b2 = (int)a2;
-            Console.WriteLine(b2);
         }
+
+        static void LeituraDeDados()
+        {
+            Console.WriteLine("------------------Ler dados----------------------");
+            string f = Console.ReadLine();
+
+            Console.WriteLine(f);
+            string[] vet = f.Split(' ');
+            string p1 = vet[0];
+
+            Console.WriteLine(p1);
+
+            int x10 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Numero é: " + x10);
+
+            if (x10 < 5)
+            {
+                Console.Write("\nMenor que 5");
+            }
+            else if (x10 >= 5 && x10 <= 10)
+            {
+                Console.Write("entre 5 e 10");
+            }
+            else
+            {
+                Console.Write("Maior que 10");
+            }
+        }
+
+        static void LacoDeRepeticao(){
+            Console.WriteLine(" WHILE ");
+            int i =0;
+            while (i <=5 )
+            {
+                Console.Write("I = "+i+"  ");
+                i++;
+            }
+
+            Console.WriteLine(" FOR ");
+            Console.WriteLine(" Pares de 0 a 100 ");
+            for (int j = 0; j < 100; j++)
+            {
+                if(j % 2 == 0)
+                    Console.Write(j+" ");
+            }
+        }
+
     }
 }
