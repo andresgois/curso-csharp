@@ -47,7 +47,6 @@ dotnet run
 dotnet --list-sdks
 dotnet new console --framework net6.0
 dotnet new console -n ApplicationBase --framework net6.0
-dotnet new console -n ApplicationBase --project TesteAula2 --framework net6.0
 ```
 
 - [Baixar .NET 6.0](https://dotnet.microsoft.com/pt-br/download/dotnet/6.0)
