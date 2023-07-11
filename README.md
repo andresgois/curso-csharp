@@ -30,6 +30,13 @@
 - `Pascal Case`: LastName (namespaces, classe, properties e métodos)
 - `Padrão` _lastName (atributos "internos" da classe)
 
+### DEBBUG
+- F9 na linha para marcar o breakpoint
+- F5 pra iniciar o debbug
+- F10 executa o próximo passo
+- F11 - executar um passo (entra na função)
+- SHIFT+F11 - sair do método em execução
+- SHIFT+F5 - parar debug
 ## Comandos Base
 ```
 dotnet --version
