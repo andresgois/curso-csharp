@@ -8,5 +8,9 @@ namespace Secao5Construtores // Note: actual namespace depends on the project na
         {
             Console.WriteLine("Hello World!");
         }
+
+        static void InciandoValores(){
+
+        }
     }
 }
