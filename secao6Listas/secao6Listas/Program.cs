@@ -7,7 +7,8 @@ namespace secao6Listas
         static void Main(string[] args)
         {
             //TesteReferencia();
-            TesteStrcut();
+            //TesteStrcut();
+            OperadorDeCoalescenciaNula();
         }
 
         static void TesteReferencia()
@@ -51,5 +52,40 @@ namespace secao6Listas
             Console.WriteLine(p3);
 
         }
+        
+        static void OperadorDeCoalescenciaNula()
+        {
+            //double x = null; // erro
+            Nullable<double> p = null;
+            Console.WriteLine("p "+p);
+
+            double? x = null;
+
+            double? y = 10.0;
+            Console.WriteLine(x.GetValueOrDefault());
+            Console.WriteLine(y.GetValueOrDefault());
+            Console.WriteLine(x.HasValue);
+            Console.WriteLine(y.HasValue);
+
+            if (x.HasValue)
+                Console.WriteLine(x.Value);
+            else
+                Console.WriteLine("X is null");
+            
+
+            Console.WriteLine(y.Value);
+
+            String estaNula = null;
+            Console.WriteLine(estaNula);
+            String vaiReceberUmValor = estaNula ?? "não esta nula";
+            Console.WriteLine(vaiReceberUmValor);
+
+            estaNula = "Novo";
+            vaiReceberUmValor = estaNula ?? "Erro";
+            Console.WriteLine(vaiReceberUmValor);
+
+        }
+
+
     }
 }
