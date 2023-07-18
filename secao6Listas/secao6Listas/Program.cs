@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace secao6Listas
 {
@@ -8,7 +9,8 @@ namespace secao6Listas
         {
             //TesteReferencia();
             //TesteStrcut();
-            OperadorDeCoalescenciaNula();
+            //OperadorDeCoalescenciaNula();
+            vetores();
         }
 
         static void TesteReferencia()
@@ -86,6 +88,25 @@ namespace secao6Listas
 
         }
 
+        static void vetores()
+        {
+            Console.WriteLine("Vetores");
+            int n = int.Parse(Console.ReadLine());
+            double[] vet = new double[n];
+
+            Console.WriteLine("Digite os valores");
+            for (int i = 0; i < n; i++)
+            {
+                vet[i] = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            }
+            double media = 0;
+            for (int i = 0; i<n; i++)
+            {
+                media += vet[i];
+            }
+            media = media / n;
+            Console.WriteLine("Media é " + media.ToString("F2", CultureInfo.InvariantCulture));
+        }
 
     }
 }
