@@ -1,4 +1,5 @@
-﻿using System;
+﻿using secao6Listas.Exercicio;
+using System;
 using System.Globalization;
 
 namespace secao6Listas
@@ -10,7 +11,8 @@ namespace secao6Listas
             //TesteReferencia();
             //TesteStrcut();
             //OperadorDeCoalescenciaNula();
-            vetores();
+            //Vetores();
+            ExercicioProduto();
         }
 
         static void TesteReferencia()
@@ -88,7 +90,7 @@ namespace secao6Listas
 
         }
 
-        static void vetores()
+        static void Vetores()
         {
             Console.WriteLine("Vetores");
             int n = int.Parse(Console.ReadLine());
@@ -108,5 +110,29 @@ namespace secao6Listas
             Console.WriteLine("Media é " + media.ToString("F2", CultureInfo.InvariantCulture));
         }
 
+        static void ExercicioProduto()
+        {
+            int n = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite os produtos");
+            Produto[] produtos = new Produto[n];
+
+            for(int i = 0;i<n;i++)
+            {
+                Console.Write("Produto: ");
+                string name = Console.ReadLine();
+                Console.WriteLine("Preço: ");
+                double preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                produtos[i] = new Produto(name, preco);
+            }
+            double soma = 0.0;
+            for (int i = 0; i < n; i++)
+            {
+                soma += produtos[i].Preco;
+            }
+            double media = soma / n;
+            Console.WriteLine("Media é: " + media.ToString("F2", CultureInfo.InvariantCulture));
+        }
     }
 }
