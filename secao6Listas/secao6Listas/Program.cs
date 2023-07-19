@@ -15,6 +15,7 @@ namespace secao6Listas
             //ExercicioProduto();
             //ExercicioParams();
             ModificadoresParametrosRefOut();
+            LacoForEach();
         }
 
         static void TesteReferencia()
@@ -148,6 +149,7 @@ namespace secao6Listas
 
         public static void ModificadoresParametrosRefOut()
         {
+            Console.WriteLine("ModificadoresParametrosRefOut");
             //A variável passada como parâmetro ref DEVE ter sido iniciada
             int a = 30;
             //Calculator.TripleRef(ref a);
@@ -171,6 +173,16 @@ namespace secao6Listas
             int x = 20;
             Object obj = x;
             int y = (int) obj;
+        }
+
+        public static void LacoForEach()
+        {
+            Console.WriteLine("LacoForEach()");
+            string[] vect = new string[] { "Maria", "Bob", "Alex" };
+            foreach (string obj in vect)
+            {
+                Console.WriteLine(obj);
+            }
         }
     }
 }
