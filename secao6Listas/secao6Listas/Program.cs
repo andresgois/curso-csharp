@@ -12,7 +12,9 @@ namespace secao6Listas
             //TesteStrcut();
             //OperadorDeCoalescenciaNula();
             //Vetores();
-            ExercicioProduto();
+            //ExercicioProduto();
+            //ExercicioParams();
+            ModificadoresParametrosRefOut();
         }
 
         static void TesteReferencia()
@@ -133,6 +135,42 @@ namespace secao6Listas
             }
             double media = soma / n;
             Console.WriteLine("Media é: " + media.ToString("F2", CultureInfo.InvariantCulture));
+        }
+    
+    
+        static void ExercicioParams()
+        {
+            Console.WriteLine("ExercicioParams()");
+            int result = Calculator.Sum(10, 20, 30, 40);
+            Console.WriteLine(result);
+        }
+        
+
+        public static void ModificadoresParametrosRefOut()
+        {
+            //A variável passada como parâmetro ref DEVE ter sido iniciada
+            int a = 30;
+            //Calculator.TripleRef(ref a);
+            Console.WriteLine(a);
+
+            //A variável passada como parâmetro out não precisa ter sido iniciada
+            int b = 40;
+            int triple;
+            Calculator.TripleOut(b, out triple);
+            Console.WriteLine(triple);
+        }
+
+        public static void Boxing()
+        {
+            int x = 20;
+            Object obj = x;
+        }
+
+        public static void Unboxing()
+        {
+            int x = 20;
+            Object obj = x;
+            int y = (int) obj;
         }
     }
 }
