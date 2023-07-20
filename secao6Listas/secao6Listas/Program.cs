@@ -14,8 +14,9 @@ namespace secao6Listas
             //Vetores();
             //ExercicioProduto();
             //ExercicioParams();
-            ModificadoresParametrosRefOut();
-            LacoForEach();
+            //ModificadoresParametrosRefOut();
+            //LacoForEach();
+            ListaFase1();
         }
 
         static void TesteReferencia()
@@ -183,6 +184,84 @@ namespace secao6Listas
             {
                 Console.WriteLine(obj);
             }
+        }
+
+        public static void ListaFase1()
+        {
+            
+            List<int> list2 = new List<int>() { 12,6,9,78};
+            foreach (var item in list2)
+            {
+                Console.WriteLine(item);
+            }
+
+            List<string> list = new List<string>();
+            list.Add("Ana");
+            list.Add("Beatriz");
+            list.Add("Priscila");
+            list.Add("Lima");
+            list.Add("Jo");
+            list.Add("Fany");
+            // insere em qualquer posição
+            list.Insert(0, "Andre");
+
+            foreach (var item in list)
+            {
+                Console.WriteLine("Nome: " + item);
+            }
+
+            //string s1 = list.Find(Test);
+            string s1 = list.Find(x => x[0]=='A');
+            Console.WriteLine(s1);
+
+            // última ocorrencia
+            string s2 = list.FindLast(x => x[0] == 'A');
+            Console.WriteLine(s2);
+
+            // última ocorrencia
+            int pos1 = list.FindIndex(x => x[0] == 'A');
+            Console.WriteLine(pos1);
+
+            int pos2 = list.FindLastIndex(x => x[0] == 'A');
+            Console.WriteLine(pos2);
+
+            Console.WriteLine("-----------FindAll---------------");
+            // string maiores que 5
+            List<string> list3 = list.FindAll(x => x.Length > 5);
+            foreach (var item in list3)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("------------Remove--------------");
+            list.Remove("Andre");
+            foreach (var item in list)
+            {
+                Console.WriteLine("Nome: " + item);
+            }
+            Console.WriteLine("------------RemoveAll--------------");
+            list.RemoveAll(x => x.Length > 5);
+            foreach (var item in list)
+            {
+                Console.WriteLine("Nome: " + item);
+            }
+            Console.WriteLine("------------RemoveAt--------------");
+            list.RemoveAt(0);
+            foreach (var item in list)
+            {
+                Console.WriteLine("Nome: " + item);
+            }
+            Console.WriteLine("-------------RemoveRange-------------");
+            list.RemoveRange(2,1);
+            foreach (var item in list)
+            {
+                Console.WriteLine("Nome: " + item);
+            }
+
+        }
+
+        public static bool Test(string s)
+        {
+            return s[0] == 'A';
         }
     }
 }
