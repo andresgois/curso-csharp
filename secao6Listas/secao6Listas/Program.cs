@@ -17,7 +17,11 @@ namespace secao6Listas
             //ModificadoresParametrosRefOut();
             //LacoForEach();
             //ListaFase1();
-            ExercicioEmployee();
+            //ExercicioEmployee();
+            //Matriz();
+            Exercicio01Matriz();
+            Console.WriteLine("////////////////");
+            Exercicio02atriz();
         }
 
         static void TesteReferencia()
@@ -310,6 +314,143 @@ namespace secao6Listas
                 Console.WriteLine(item);
             }
 
+        }
+
+        public static void Matriz()
+        {
+            double[,] mat = new double[2, 3];
+            // Tamanho = 2*3 = 6
+            Console.WriteLine(mat.Length);
+            // 2
+            Console.WriteLine(mat.Rank);
+            // Tamanho linha 2
+            Console.WriteLine(mat.GetLength(0));
+            // Tamanho coluna 3
+            Console.WriteLine(mat.GetLength(1));
+        }
+
+        public static void Exercicio01Matriz()
+        {
+            /**
+             * Fazer um programa para ler um número inteiro N e uma matriz de
+                ordem N contendo números inteiros. Em seguida, mostrar a diagonal
+                principal e a quantidade de valores negativos da matriz.
+             * */
+            Console.Write("Digite um valor para linha e coluna: ");
+            int n = int.Parse(Console.ReadLine());
+            int[,] mat = new int[n, n];
+
+            Console.Write("Digite os valores da primeira linha separando por espaço: ");
+            for (int i = 0; i < n; i++)
+            {
+                string[] values = Console.ReadLine().Split(' ');
+                for (int j = 0; j < n; j++)
+                {
+                    mat[i, j] = int.Parse(values[j]);
+                }
+            }
+
+            Console.WriteLine("Main diagonal:");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(mat[i, i] + " ");
+            }
+            Console.WriteLine();
+
+            int count = 0;
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (mat[i, j] < 0)
+                    {
+                        count++;
+                    }
+                }
+            }
+            Console.WriteLine("Negative numbers: " + count);
+
+            /*
+             * 3
+                5 -3 10
+                15 8 2
+                7 9 -4
+            Main diagonal:
+            5 8 -4
+            Negative numbers: 2
+             * */
+        }
+
+        public static void Exercicio02atriz()
+        {
+            /*
+             * Fazer um programa para ler dois números inteiros M e N, e depois ler
+            uma matriz de M linhas por N colunas contendo números inteiros,
+            podendo haver repetições. Em seguida, ler um número inteiro X que
+            pertence à matriz. Para cada ocorrência de X, mostrar os valores à
+            esquerda, acima, à direita e abaixo de X, quando houver, conforme
+            exemplo.
+             * */
+            Console.Write("Digite um valor para linha e coluna: ");
+            string[] line = Console.ReadLine().Split(' ');
+            int m = int.Parse(line[0]);
+            int n = int.Parse(line[1]);
+
+            int[,] mat = new int[m, n];
+
+            Console.Write("Digite os valores da primeira linha separando por espaço: ");
+            for (int i = 0; i < m; i++)
+            {
+                string[] values = Console.ReadLine().Split(' ');
+                for (int j = 0; j < n; j++)
+                {
+                    mat[i, j] = int.Parse(values[j]);
+                }
+            }
+            Console.Write("Digite o número que quer procurar: ");
+            int x = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (mat[i, j] == x)
+                    {
+                        Console.WriteLine("Position " + i + "," + j + ":");
+                        if (j > 0)
+                        {
+                            Console.WriteLine("Left: " + mat[i, j - 1]);
+                        }
+                        if (i > 0)
+                        {
+                            Console.WriteLine("Up: " + mat[i - 1, j]);
+                        }
+                        if (j < n - 1)
+                        {
+                            Console.WriteLine("Right: " + mat[i, j + 1]);
+                        }
+                        if (i < m - 1)
+                        {
+                            Console.WriteLine("Down: " + mat[i + 1, j]);
+                        }
+                    }
+                }
+            }
+            /*
+             3 4
+            10 8 15 12
+            21 11 23 8
+            14 5 13 19
+            8
+            Position 0,1:
+            Left: 10
+            Right: 15
+            Down: 11
+            Position 1,3:
+            Left: 23
+            Up: 12
+            Down: 19
+             */
         }
     }
 }
