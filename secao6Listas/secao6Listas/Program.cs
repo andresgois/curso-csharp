@@ -16,7 +16,8 @@ namespace secao6Listas
             //ExercicioParams();
             //ModificadoresParametrosRefOut();
             //LacoForEach();
-            ListaFase1();
+            //ListaFase1();
+            ExercicioEmployee();
         }
 
         static void TesteReferencia()
@@ -262,6 +263,53 @@ namespace secao6Listas
         public static bool Test(string s)
         {
             return s[0] == 'A';
+        }
+
+        public static void ExercicioEmployee()
+        {
+            Console.WriteLine("ExercicioEmployee()");
+            Console.Write("How many employees will be registered? ");
+            int n = int.Parse(Console.ReadLine());
+
+            List<Employee>  employee = new List<Employee>();
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine("Employee #"+(i+1));
+                Console.Write("Id: ");
+                int id = int.Parse(Console.ReadLine());
+                Console.Write("Name: ");
+                string name = Console.ReadLine();
+                Console.Write("Salary: ");
+                double salary = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                employee.Add(new Employee(id, name, salary));
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+            Console.Write("Enter the employee id that will have salary increase: ");
+            int id2 = int.Parse(Console.ReadLine()) ;
+
+            Console.WriteLine();
+            Employee emp = employee.Find(e => e.Id == id2);
+
+            if( emp == null )
+            {
+                Console.WriteLine("This id does not exist!");
+            }
+            else{
+                double increment = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                emp.IncrementSalary(increment);
+
+                Console.Write("Enter the percentage: ");
+            }
+
+            Console.WriteLine("Updated list of employees: ");
+            foreach (Employee item in employee)
+            {
+                Console.WriteLine(item);
+            }
+
         }
     }
 }
