@@ -10,7 +10,11 @@ namespace secao7Topicos1
             //SwitchCase.SwitchCaseTeste();
             //Ternario.PrintTernario();
             //FuncoesString.PrintFuncoesString();
-            FuncaoDateTime.PrintFuncaoDateTime();
+            //FuncaoDateTime.PrintFuncaoDateTime();
+            TimeSpanTeste.PrintTimeSpanTeste();
+            //DateTime2.PrintDateTime();
+            //TimeSpan2.PrintTimeSpan();
+            //DateTimeKindExemplo.PrintDateTimeKind();
         }
     }
 }
