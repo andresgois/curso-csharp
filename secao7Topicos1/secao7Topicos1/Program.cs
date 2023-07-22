@@ -8,7 +8,9 @@ namespace secao7Topicos1
         {
             //TipoVar.printTipoVar();
             //SwitchCase.SwitchCaseTeste();
-            Ternario.PrintTernario();
+            //Ternario.PrintTernario();
+            //FuncoesString.PrintFuncoesString();
+            FuncaoDateTime.PrintFuncaoDateTime();
         }
     }
 }
