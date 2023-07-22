@@ -6,7 +6,9 @@ namespace secao7Topicos1
     {
         static void Main(string[] args)
         {
-            TipoVar.printTipoVar();
+            //TipoVar.printTipoVar();
+            //SwitchCase.SwitchCaseTeste();
+
         }
     }
 }
