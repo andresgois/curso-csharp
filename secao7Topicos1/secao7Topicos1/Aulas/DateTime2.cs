@@ -47,18 +47,33 @@ namespace secao7Topicos1.Aulas
 
             Console.WriteLine("");
             Console.WriteLine("Operações com Datetime");
-            DateTime x = ..
-            DateTime y = x.Add(timeSpan);
-            DateTime y = x.AddDays(double);
-            DateTime y = x.AddHours(double);
-            DateTime y = x.AddMilliseconds(double);
-            DateTime y = x.AddMinutes(double);
-            DateTime y = x.AddMonths(int);
-            DateTime y = x.AddSeconds(double);
-            DateTime y = x.AddTicks(long);
-            DateTime y = x.AddYears(int);
-            DateTime y = x.Subtract(timeSpan);
-            TimeSpan t = x.Subtract(dateTime);
+            DateTime x = DateTime.Now;
+            //DateTime y = x.Add(timeSpan);
+            DateTime y = x.AddDays(2);
+            DateTime y1 = x.AddHours(3);
+            DateTime y2 = x.AddMilliseconds(200);
+            DateTime y3 = x.AddMinutes(34);
+            DateTime y4 = x.AddMonths(1);
+            DateTime y5 = x.AddSeconds(23);
+            DateTime y6 = x.AddTicks(1223);
+            DateTime y7 = x.AddYears(23);
+
+            // diferença entre datas
+            DateTime dia15 = new DateTime(2023, 05, 15);
+            DateTime hoje = DateTime.Now;
+            //DateTime y8 = hoje.Subtract(dia15);
+            TimeSpan t = hoje.Subtract(dia15);
+
+            Console.WriteLine(y);
+            Console.WriteLine(y1);
+            Console.WriteLine(y2);
+            Console.WriteLine(y3);
+            Console.WriteLine(y4);
+            Console.WriteLine(y5);
+            Console.WriteLine(y6);
+            Console.WriteLine(y7);
+            //Console.WriteLine(y8);
+            Console.WriteLine(t);
 
         }
 
