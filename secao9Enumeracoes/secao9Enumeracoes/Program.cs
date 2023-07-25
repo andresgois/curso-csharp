@@ -2,6 +2,8 @@
 using secao9Enumeracoes.Composicao;
 using secao9Enumeracoes.Enumeracoes;
 using System.Globalization;
+using secao9Enumeracoes.Exercicio01.Entities;
+using secao9Enumeracoes.Exercicio02.Entities;
 
 namespace secao9Enumeracoes
 {
@@ -11,7 +13,9 @@ namespace secao9Enumeracoes
         {
             Console.WriteLine("------------ Enumerações ------------");
             //Enumeracoes();
-            Composicao();
+            //Composicao();
+            //Exercicio01();
+            Exercicio02();
         }
 
         public static void Enumeracoes()
@@ -77,5 +81,73 @@ namespace secao9Enumeracoes
             Console.WriteLine("Income for " + monthAndYear + ": " + worker.Income(year, month).ToString("F2", CultureInfo.InvariantCulture));
         }
     
+    
+        public static void Exercicio01()
+        {
+            Comment c1 = new Comment("Have a nice trip!");
+            Comment c2 = new Comment("Wow that's awesome!");
+            Post p1 = new Post(
+                    DateTime.Parse("21/06/2018 13:05:44"),
+                    "Traveling to New Zealand",
+                    "I'm going to visit this wonderful country!",
+                    12);
+            p1.AddComment(c1);
+            p1.AddComment(c2);
+
+            Comment c3 = new Comment("Good night");
+            Comment c4 = new Comment("May the Force be with you");
+            Post p2 = new Post(
+                    DateTime.Parse("28/07/2018 23:14:19"),
+                    "Good night guys",
+                    "See you tomorrow",
+                    5);
+            p2.AddComment(c3);
+            p2.AddComment(c4);
+
+            Console.WriteLine(p1);
+            Console.WriteLine(p2);
+        }
+
+        public static void Exercicio02()
+        {
+            Console.WriteLine("Enter client data: ");
+            Console.Write("Name: ");
+            string clientName = Console.ReadLine();
+            Console.Write("Email: ");
+            string email = Console.ReadLine();
+            Console.Write("Birth date (DD/MM/YYYY): ");
+            DateTime birthDate = DateTime.Parse(Console.ReadLine());
+            Console.WriteLine("Enter order data: ");
+            Console.Write("Status: ");
+            OrderStatus status = Enum.Parse<OrderStatus>(Console.ReadLine());
+
+            Client client = new Client(clientName, email, birthDate);
+            Orders order = new Orders(DateTime.Now, status, client);
+
+            Console.Write("How many items to this order? ");
+            int n = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= n; i++)
+            {
+                Console.WriteLine($"Enter #{i} item data:");
+                Console.Write("Product name: ");
+                string productName = Console.ReadLine();
+                Console.Write("Product price: ");
+                double price = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                Product product = new Product(productName, price);
+
+                Console.Write("Quantity: ");
+                int quantity = int.Parse(Console.ReadLine());
+
+                OrderItem orderItem = new OrderItem(quantity, price, product);
+
+                order.AddItem(orderItem);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("ORDER SUMMARY:");
+            Console.WriteLine(order);
+        }
     }
 }
