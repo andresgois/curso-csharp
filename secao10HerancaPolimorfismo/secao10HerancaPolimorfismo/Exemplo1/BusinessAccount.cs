@@ -20,7 +20,7 @@ namespace secao10HerancaPolimorfismo.Exemplo1
             Load = load;
         }
 
-        public void load(double amount)
+        public void loan(double amount)
         {
             Balance += amount;
         }
